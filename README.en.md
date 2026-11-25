@@ -23,6 +23,7 @@ INSS + IRRF aproximados and how much to charge como PJ for igualar os benefício
 - `.gitattributes`
 - `app.js`
 - `index.html`
+- `piercer_i18n.js`
 - `README.md`
 - `start.bat`
 - `styles.css`
