@@ -23,6 +23,7 @@ INSS + IRRF aproximados e quanto cobrar como PJ para igualar os benefícios CLT
 - `.gitattributes`
 - `app.js`
 - `index.html`
+- `piercer_i18n.js`
 - `README.md`
 - `start.bat`
 - `styles.css`
