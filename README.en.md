@@ -1,13 +1,13 @@
 > **[Versão em Português](./README.md)**
 
-# Calculadora CLT Líquido vs. PJ | piercer
+# calculator CLT Líquido vs. PJ | piercer
 
-INSS + IRRF aproximados e quanto cobrar como PJ para igualar os benefícios CLT
+INSS + IRRF aproximados and how much to charge como PJ for igualar os benefícios CLT
 
 ## Features
 
-- **Main Sections**: Dados CLT, Dados PJ, Divisão do Bruto CLT
-- **Available Actions**: Resetar, PDF
+- **Main Sections**: dice/data CLT, dice/data PJ, Divisão of Bruto CLT
+- **Available Actions**: reset, PDF
 - **Auto-Save**: automatically persists changes in the browser (`localStorage`).
 - **Multi-Language**: built-in language switcher (`PT / EN / ES`).
 - **Print / PDF**: A4-optimized print layout via `@media print`.
