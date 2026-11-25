@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="author" content="piercer" />
+  <title>Calculadora CLT Líquido vs. PJ | piercer</title>
+  <meta name="description" content="Calcule salário líquido CLT (INSS e IRRF progressivos) e descubra quanto cobrar como PJ para empatar considerando 13º, férias e FGTS." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <div>
+        <h1>Calculadora CLT Líquido vs. PJ</h1>
+        <p class="subtitle">INSS + IRRF aproximados e quanto cobrar como PJ para igualar os benefícios CLT</p>
+      </div>
+      <div class="actions">
+        <button id="resetBtn" class="btn btn-secondary" type="button">Resetar</button>
+        <button id="printBtn" class="btn btn-secondary" type="button">PDF</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container main-grid">
+    <section class="card">
+      <h2>Dados CLT</h2>
+      <div class="field">
+        <label for="grossClt">Salário Bruto CLT (R$)</label>
+        <input id="grossClt" class="input mono" type="number" step="100" min="1000" value="5500" />
+      </div>
+      <div class="row-2">
+        <div class="field">
+          <label for="benefitsClt">Benefícios VR/VA/Plano (R$)</label>
+          <input id="benefitsClt" class="input mono" type="number" step="50" min="0" value="800" />
+        </div>
+        <div class="field">
+          <label for="otherDesc">Outros Descontos (R$)</label>
+          <input id="otherDesc" class="input mono" type="number" step="50" min="0" value="0" />
+        </div>
+      </div>
+
+      <h2>Dados PJ</h2>
+      <div class="row-2">
+        <div class="field">
+          <label for="pjTaxPct">Imposto PJ / Simples (%)</label>
+          <input id="pjTaxPct" class="input mono" type="number" step="0.5" min="0" max="30" value="6.0" />
+        </div>
+        <div class="field">
+          <label for="pjAccountant">Contador + INSS PJ (R$/mês)</label>
+          <input id="pjAccountant" class="input mono" type="number" step="50" min="0" value="450" />
+        </div>
+      </div>
+    </section>
+
+    <section class="results-col">
+      <div class="kpi-grid">
+        <article class="card kpi highlight">
+          <span class="kpi-label">Salário Líquido CLT</span>
+          <strong id="outCltNet" class="kpi-value mono">R$ 0,00</strong>
+          <span id="outCltPack" class="kpi-sub mono">Pacote real (c/ 13º/férias/FGTS): R$ 0,00/mês</span>
+        </article>
+        <article class="card kpi">
+          <span class="kpi-label">Faturamento PJ Equivalente</span>
+          <strong id="outPjNeeded" class="kpi-value mono accent">R$ 0,00</strong>
+          <span id="outPjRatio" class="kpi-sub mono">Fator: 0x do bruto CLT</span>
+        </article>
+        <article class="card kpi">
+          <span class="kpi-label">INSS + IRRF Estimados</span>
+          <strong id="outCltTaxes" class="kpi-value mono red">R$ 0,00</strong>
+          <span id="outTaxSplit" class="kpi-sub mono">INSS: R$ 0 • IRRF: R$ 0</span>
+        </article>
+        <article class="card kpi">
+          <span class="kpi-label">FGTS Mensal (8%)</span>
+          <strong id="outFgts" class="kpi-value mono">R$ 0,00</strong>
+          <span class="kpi-sub mono">Depositado pela empresa</span>
+        </article>
+      </div>
+
+      <div class="card donut-card">
+        <svg id="donutSvg" viewBox="0 0 120 120" width="110" height="110"></svg>
+        <div>
+          <h2 style="margin-bottom:0.4rem;">Divisão do Bruto CLT</h2>
+          <p id="donutLegend" class="kpi-sub mono" style="line-height:1.8;"></p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+  <script src='../piercer_i18n.js'></script>
+</body>
+</html>
